@@ -1,8 +1,16 @@
 
-foo = foo version 2
-democonfigclient.message=hello spring io
-
+server:
+  port: 8889
 # routes to serviceId
+zuul:
+  routes:
+    api-a:
+      path: /userapi/**
+      serviceId: USER
+    api-b:
+      path: /addressapi/**
+      serviceId: ADDRESS
+
 # routes to url
 # zuul.routes.api-a-url.path=/userapi/**
 # zuul.routes.api-a-url.url=http://localhost:8881/
